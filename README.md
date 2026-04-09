@@ -1,4 +1,4 @@
-# Appointment Backend - Task 1
+# Appointment Backend - Task 1 (Updated ER Diagram as per feedback)
 
 ## ER Diagram
 ![ER Diagram](ER.png)
