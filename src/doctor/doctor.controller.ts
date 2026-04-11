@@ -1,7 +1,9 @@
 import {
   Controller,
   Post,
+  Get,
   Body,
+  Query,
   UseGuards,
   Req,
   ForbiddenException,
@@ -13,7 +15,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 export class DoctorController {
   constructor(private service: DoctorService) {}
 
-  @UseGuards(JwtAuthGuard)
+   @UseGuards(JwtAuthGuard)
   @Post('onboard')
   onboard(@Body() body, @Req() req) {
     if (req.user.role !== 'doctor') {
@@ -24,5 +26,10 @@ export class DoctorController {
       ...body,
       userId: req.user.id,
     });
+  }
+
+   @Get()
+  getDoctors(@Query() query) {
+    return this.service.findAll(query);
   }
 }
