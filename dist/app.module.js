@@ -10,7 +10,8 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const auth_module_1 = require("./auth/auth.module");
-const user_entity_1 = require("./user/user.entity");
+const doctor_module_1 = require("./doctor/doctor.module");
+const patient_module_1 = require("./patient/patient.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -27,8 +28,9 @@ exports.AppModule = AppModule = __decorate([
                 autoLoadEntities: true,
                 synchronize: true,
             }),
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User]),
             auth_module_1.AuthModule,
+            doctor_module_1.DoctorModule,
+            patient_module_1.PatientModule,
         ],
     })
 ], AppModule);

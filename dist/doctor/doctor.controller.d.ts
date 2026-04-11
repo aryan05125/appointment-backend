@@ -1,0 +1,6 @@
+import { DoctorService } from './doctor.service';
+export declare class DoctorController {
+    private service;
+    constructor(service: DoctorService);
+    onboard(body: any, req: any): Promise<any>;
+}

@@ -12,28 +12,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserService = void 0;
+exports.PatientService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("./user.entity");
+const patient_entity_1 = require("./patient.entity");
 const typeorm_2 = require("typeorm");
-let UserService = class UserService {
+let PatientService = class PatientService {
     repo;
     constructor(repo) {
         this.repo = repo;
     }
-    create(userData) {
-        const user = this.repo.create(userData);
-        return this.repo.save(user);
-    }
-    findByEmail(email) {
-        return this.repo.findOne({ where: { email } });
+    createOrUpdate(data) {
+        return this.repo.save(data);
     }
 };
-exports.UserService = UserService;
-exports.UserService = UserService = __decorate([
+exports.PatientService = PatientService;
+exports.PatientService = PatientService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
+    __param(0, (0, typeorm_1.InjectRepository)(patient_entity_1.Patient)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], UserService);
-//# sourceMappingURL=user.service.js.map
+], PatientService);
+//# sourceMappingURL=patient.service.js.map

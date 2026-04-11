@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AuthModule } from './auth/auth.module';
-import { User } from './user/user.entity';
+import { DoctorModule } from './doctor/doctor.module';
+import { PatientModule } from './patient/patient.module';
 
 @Module({
   imports: [
@@ -15,8 +17,9 @@ import { User } from './user/user.entity';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User]),  
     AuthModule,
+    DoctorModule,
+    PatientModule,
   ],
 })
 export class AppModule {}

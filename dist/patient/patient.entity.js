@@ -9,37 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.Patient = void 0;
 const typeorm_1 = require("typeorm");
-let User = class User {
+let Patient = class Patient {
     id;
+    userId;
     name;
-    email;
-    password;
-    role;
+    age;
+    gender;
 };
-exports.User = User;
+exports.Patient = Patient;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], Patient.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], Patient.prototype, "userId", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], User.prototype, "name", void 0);
+], Patient.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ unique: true }),
-    __metadata("design:type", String)
-], User.prototype, "email", void 0);
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], Patient.prototype, "age", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], User.prototype, "password", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], User.prototype, "role", void 0);
-exports.User = User = __decorate([
+], Patient.prototype, "gender", void 0);
+exports.Patient = Patient = __decorate([
     (0, typeorm_1.Entity)()
-], User);
-//# sourceMappingURL=user.entity.js.map
+], Patient);
+//# sourceMappingURL=patient.entity.js.map

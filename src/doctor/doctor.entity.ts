@@ -1,19 +1,19 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class User {
+export class Doctor {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
+  userId: number;
+
+  @Column()
   name: string;
 
-  @Column({ unique: true })
-  email: string;    
-
   @Column()
-  password: string;
+  specialization: string;
 
-  @Column()
-  role: 'doctor' | 'patient';
+  @Column({ nullable: true })
+  experience: number;
 }

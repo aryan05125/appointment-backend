@@ -4,5 +4,5 @@ export declare class UserService {
     private repo;
     constructor(repo: Repository<User>);
     create(userData: any): Promise<User[]>;
-    findByMobile(mobile: string): Promise<User | null>;
+    findByEmail(email: string): Promise<User | null>;
 }

@@ -15,7 +15,7 @@ export class UserService {
     return this.repo.save(user);
   }
 
-  findByMobile(mobile: string) {
-    return this.repo.findOne({ where: { mobile } });
+   findByEmail(email: string) {
+    return this.repo.findOne({ where: { email } });
   }
 }
