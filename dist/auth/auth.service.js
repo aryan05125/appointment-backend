@@ -57,12 +57,14 @@ let AuthService = class AuthService {
     async signup(data) {
         const hashed = await bcrypt.hash(data.password, 10);
         return this.userService.create({
-            ...data,
+            name: data.name,
+            email: data.email,
             password: hashed,
+            role: data.role,
         });
     }
     async login(data) {
-        const user = await this.userService.findByMobile(data.mobile);
+        const user = await this.userService.findByEmail(data.email);
         if (!user)
             throw new Error('User not found');
         const match = await bcrypt.compare(data.password, user.password);
