@@ -30,6 +30,9 @@ let DoctorController = class DoctorController {
             userId: req.user.id,
         });
     }
+    getDoctors(query) {
+        return this.service.findAll(query);
+    }
 };
 exports.DoctorController = DoctorController;
 __decorate([
@@ -41,6 +44,13 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
 ], DoctorController.prototype, "onboard", null);
+__decorate([
+    (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], DoctorController.prototype, "getDoctors", null);
 exports.DoctorController = DoctorController = __decorate([
     (0, common_1.Controller)('doctor'),
     __metadata("design:paramtypes", [doctor_service_1.DoctorService])
