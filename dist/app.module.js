@@ -13,6 +13,7 @@ const auth_module_1 = require("./auth/auth.module");
 const doctor_module_1 = require("./doctor/doctor.module");
 const patient_module_1 = require("./patient/patient.module");
 const availability_module_1 = require("./availability/availability.module");
+const slot_module_1 = require("./slot/slot.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -33,6 +34,7 @@ exports.AppModule = AppModule = __decorate([
             doctor_module_1.DoctorModule,
             patient_module_1.PatientModule,
             availability_module_1.AvailabilityModule,
+            slot_module_1.SlotModule,
         ],
     })
 ], AppModule);
