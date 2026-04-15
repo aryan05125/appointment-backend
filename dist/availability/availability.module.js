@@ -20,6 +20,7 @@ exports.AvailabilityModule = AvailabilityModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([availability_entity_1.Availability])],
         providers: [availability_service_1.AvailabilityService],
         controllers: [availability_controller_1.AvailabilityController],
+        exports: [availability_service_1.AvailabilityService],
     })
 ], AvailabilityModule);
 //# sourceMappingURL=availability.module.js.map
